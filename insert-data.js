@@ -1,6 +1,5 @@
 import { MongoClient } from "mongodb";
  
-// Replace the following with your Atlas connection string                                                                                                                                        
 const url = "mongodb+srv://ladeia:jana17@pets.y8xzvi8.mongodb.net/?retryWrites=true&w=majoritye";
 const client = new MongoClient(url);
  
