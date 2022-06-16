@@ -6,7 +6,7 @@
 const express = require('express')
 
 // const url = process.env.MONGO_URL
-// const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000
 // const client = new MongoClient(url);
 
 const app = express()
