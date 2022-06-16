@@ -12,7 +12,7 @@ const app = express()
 // app.use(cors())
 // app.use(express.json({}))
 
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
   res.send("Home page 2")
 })
 
