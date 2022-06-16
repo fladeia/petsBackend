@@ -1,19 +1,19 @@
 import 'dotenv/config'
 import express from "express";
-import cors from 'cors'
-import { MongoClient } from "mongodb";
+// import cors from 'cors'
+// import { MongoClient } from "mongodb";
 
-const url = process.env.MONGO_URL
+// const url = process.env.MONGO_URL
 const PORT = process.env.PORT || 8000
-const client = new MongoClient(url);
+// const client = new MongoClient(url);
 
 const app = express()
 
-app.use(cors())
-app.use(express.json({}))
+// app.use(cors())
+// app.use(express.json({}))
 
 app.get('/', (req, res) => {
-  res.json({message: "Home page 2"})
+  res.send("Home page 2")
 })
 
 // app.get('/api/pets', async function getPets(req, res) {
