@@ -54,8 +54,8 @@ async function getAdoptedPets(req, res) {
       const query = {};
 
       const options = {
-        sort: { "petName": 1 },
-        projection: { _id: 0, pet_id: 1, email: 1, amount: 1 },
+        sort: { "pet_name": 1 },
+        projection: { _id: 0, pet_name: 1, email: 1, amount: 1 },
       };
 
       const cursor = adoptedPet.find(query, options);
@@ -76,10 +76,10 @@ async function adoptPet(req, res) {
 
     const database = client.db('pets');
     const adoptedPet = database.collection("adoptedPet");
-    const doc = req.body
+    const doc = req.body // <<-- selectedPet: {pet_id selectedPet._id, pet_name, email, amount}
     const result = await adoptedPet.insertOne(doc);
 
-    res.status(200).send(`Pet adotado com sucesso _id: ${result.insertedId}`);
+    res.status(200).send(`Pet ${doc.pet_name} adotado com sucesso. Obrigado!`);
   } catch (err) {
     console.log(err);
   }
