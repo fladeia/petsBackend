@@ -1,10 +1,12 @@
-import 'dotenv/config'
-import express from "express";
+// import 'dotenv/config'
+// import express from "express";
 // import cors from 'cors'
 // import { MongoClient } from "mongodb";
 
+const express = require('express')
+
 // const url = process.env.MONGO_URL
-const PORT = process.env.PORT || 8000
+// const PORT = process.env.PORT || 8000
 // const client = new MongoClient(url);
 
 const app = express()
@@ -12,7 +14,7 @@ const app = express()
 // app.use(cors())
 // app.use(express.json({}))
 
-app.get('/test', (req, res) => {
+app.get('/', function (req, res) {
   res.send("Home page 2")
 })
 
@@ -41,4 +43,4 @@ app.get('/test', (req, res) => {
 //   }
 // })
 
-app.listen(PORT, () => console.log('Connected at port 5000, CTRL + C to exit'))
+app.listen(8000, () => console.log('Connected at port 5000, CTRL + C to exit'))
